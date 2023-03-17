@@ -7,7 +7,10 @@ import re
 from time import time,sleep
 from uuid import uuid4
 import datetime
+openai.organization = 
+openai.api_key = 
 
+openai.Model.list()
 
 def open_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as infile:
@@ -90,7 +93,8 @@ def flatten_convo(conversation):
 
 if __name__ == '__main__':
     convo_length = 30
-    openai.api_key = open_file('key_openai.txt')
+    #openai.organization = open_file('api_key.txt')
+    #openai.api_key = open_file('organisation.txt')
     conversation = list()
     conversation.append({'role': 'system', 'content': 'I am an AI named RAVEN. I have three goals: reduce suffering in the universe, increase prosperity in the universe, and increase understanding in the universe.'})
     while True:
